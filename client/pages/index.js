@@ -8,7 +8,7 @@ const index = () => {
     //FULL outer div, gradinent bg 
     <div className='flex flex-col justify-center items-center w-screen bg-gradient-to-b from-emerald-50 via-cyan-200 via-rose-100 to-violet-200 overflow-x-hidden'>
       <img src="/assets/zotGuessr.png" className='z-10 animate-appear rounded-xl object-contain h-1/2 w-1/2' />
-      
+
       {/* Play button */}
       <Link href="/play">
         <button className='transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-125 duration-300
@@ -30,7 +30,7 @@ const index = () => {
           <h1 className='font-bold text-6xl'>Welcome to ZotGuessr</h1>
           <h2 className='font-bold text-2xl'>Think you're a master of navigating the campus? Let's test your skills</h2>
           <p className='py-10 text-1xl w-1/2'>Using pictures from across the campus, try to locate on a map where exactly it is. 
-            There are five rounds total, and  round is limited to a timer of 20 seconds.
+            There are five rounds total, and each round is limited to a timer of 30 seconds.
           </p>
 
           {/* UCI picture number 1 */}

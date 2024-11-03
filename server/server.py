@@ -22,15 +22,17 @@ locations = [["/assets/two.jpg", (514, 545)],
 
 # get the distance
 # 1250-distance
-locationFileName ="/assets/two.jpg"
-locationPosition = (819, 251)
 
 locationFileNames = []
 locationPositions = []
 
 @app.route('/api/play', methods =['GET'])
 def play():
+    global locationFileName, locationPosition
     locationFileName, locationPosition = random.choice(locations)
+    print("Loc Name Pos")
+    print(locationFileName)
+    print(locationPosition)
     return jsonify({"locationFileName": locationFileName, "locationPosition": locationPosition})
 
 
@@ -41,6 +43,8 @@ def submit():
     locx = float(locx)
     locy = float(locy)
     distance = sqrt((locationPosition[0]-locx)**2 +(locationPosition[1]-locy)**2)
+    print("locx", locx, "locy", locy)
+    print("locationPosition", locationPosition)
     score = int(max(0, (1236 - (distance ** 1.15))))
     return jsonify({"score": score})
 
