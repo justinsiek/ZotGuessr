@@ -1,35 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react'
+import Link from 'next/link'
 
-function Index() {
-  const [number, setNumber] = useState('');
-  const [result, setResult] = useState('');
+const index = () => {
 
-  const doubleNumber = () => {
-    fetch(`http://localhost:8080/api/double?number=${number}`)
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        setResult(`Result: ${data.result}`);
-      });
-  };
 
   return (
-    <div className='flex flex-col justify-center items-center h-screen'>
-      <p className='mb-4'>{result}</p>
-      <input
-        className='border border-gray-400 p-2 w-1/4 rounded-lg mb-4'
-        type="number"
-        value={number}
-        onChange={(e) => setNumber(e.target.value)}
-        placeholder="Enter a number..."
-      />
-      <button
-        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded' 
-        onClick={doubleNumber}>Double It!</button>
+    <div className='flex flex-col justify-center items-center h-screen w-screen relative bg-gradient-to-b from-slate-50 to-sky-200'>
+      <img src="/assets/zotGuessr.png" className='z-10 rounded-xl object-contain h-1/2 w-1/2'>
+      </img>
+      
+      <Link href="/play">
+        <button className='text-4xl z-10 border-2 border-solid border-black font-sans font-family:ui-sans-serif font-bold
+        text-slate-50 px-12 py-4 rounded-xl hover:text-slate-200 bg-sky-400 hover:bg-sky-500'>Play ZotGuessr!</button>
+      </Link>
+
+
       
     </div>
-  );
+  )
 }
 
-export default Index;
+export default index
